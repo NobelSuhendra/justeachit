@@ -1,0 +1,212 @@
+.navbtn {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    float: left;
+    margin-top: 10px;
+    margin-right: 30px;
+    transition: 0.3s;
+    width: 130px;
+    text-align: center;
+    height: 50px;
+}
+
+.navbtn:hover {
+    border-radius: 30px;
+    border-color: white;
+    border: solid;
+    transition: 0.3s;
+    background-color: white;
+    color: #EFA953;
+}
+
+.accbtn {
+    float: right;
+    margin-right: 15px;
+    border: none;
+    margin-top: 15px;
+    height: 42px;
+    width: 42px;
+    margin-left: 15px;
+    filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(235deg) brightness(108%) contrast(101%);
+}
+
+.navbtn2 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: transparent;
+    color: white;
+    transition: 0.3s;
+    width: 110px;
+    text-align: center;
+    height: 60px;
+    position: fixed;
+    left: 10px;
+    bottom: 10px; 
+    border-color: #243972;
+    background-color: #243972;
+    border-radius: 20px;
+    border-width: 3px;
+}
+
+.navbtn2:hover {
+    border-radius: 20px;
+    border-color: #243972;
+    border: solid;
+    transition: 0.3s;
+    background-color: transparent;
+    color: #243972;
+}
+
+#inp1 {
+    outline: none;
+    border: none;
+    width: calc(100% - 50px);
+    height: 23px;
+    margin-top: 4px;
+    font-size: 18px;
+    font-family: "Noto Sans", sans-serif;
+    float: right;
+    margin-right: 10px;
+    margin-top: 6px;
+    background-color: white;
+}
+
+#inpcon {
+    text-align: center;
+    width: 32%;
+    height: 40px;
+    border: solid;
+    background-color: white !important;
+    border-radius: 15px;
+    border-color: #EFA953;
+    float: right;
+    margin-top: 15px;
+}
+
+#srch {
+    height: 22px;
+    margin-left: 10px;
+    width: 21.5px;
+    float: left;
+    margin-top: 6px;
+}
+
+.navcon {
+    height: 70px;
+    width: 100%;
+    background-color: #EFA953;
+    position: fixed;
+    top: 0; 
+    z-index: 2;
+}
+
+#head1 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 30px;
+    margin-top: 10px !important;
+    margin-left: 30px;
+    position: relative;
+    float: left;
+    color: white;
+    letter-spacing: 10px;
+    margin-right: 40px;
+}
+
+.head3 {
+    font-family: "Noto-Sans", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 60px;
+    color: #243972;
+}
+
+.head4 {
+    font-family: "Noto-Sans", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 100px;
+    color: #243972;
+}
+
+.inp {
+    width: 600px;
+    margin-left: 28px;
+    height: 32px;
+    border: solid;
+    background-color: transparent;
+    font-family: "Noto-Sans", sans-serif;
+    font-size: 16px;
+    margin-top: 8px;
+    outline: none;
+    border-width: 0.1px;
+    border-color: #d4d4d4;
+    color: #243972;
+}
+
+.subhead {
+    margin-left: 28px;
+    margin-top: 15px;
+    font-size: 18px;
+    font-family: "Noto-Sans", sans-serif;
+    color: #EFA953;
+}
+
+.subbtn {
+    margin-left: 28px;
+    width: 230px;
+    height: 60px;
+    border-radius: 25px;
+    border-color: #EFA953;
+    background-color: #EFA953;
+    color: white;
+    margin-top: 40px;
+    transition: 0.3s;
+    border: solid;
+    font-family: "Noto-Sans", sans-serif;
+    font-size: 20px;
+}
+
+.subbtn:hover {
+    background-color: white;
+    color: #EFA953;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #d4d4d4;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #d4d4d4;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #d4d4d4;
+  }
+
+#logout {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color:#EFA953;
+    font-weight: bold;
+    font-family: "Noto-Sans", sans-serif;
+    font-size: 18px;
+}
+
+.desc1 {
+    margin-left: 30px;
+    font-family: "Noto-Sans", sans-serif;
+    font-size: 18px;
+}

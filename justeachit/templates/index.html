@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+  </head>
+  <body class="bgimage">
+    <div class="jthead">JT</div>
+    <div class="tc">
+      TEACHING HAS NEVER BEEN SO EASY
+    </div>
+    <div class="float-right-lg">
+      <p>
+        JusTeach.it is a website to help teachers and
+        students arrange tutoring sessions or meetings.
+        It has a built-in calendar to show the availability
+        of both teachers and students, as well as a chat
+        integration to make communication more convenient.
+      </p>
+    </div>
+    <div>
+      <form action="{{ url_for('register') }}" method="GET">
+        <input class="btn" type="submit" value="JOIN NOW">
+      </form>
+    </div>
+  </body>
+</html>

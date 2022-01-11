@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+        <link href="/static/style-5.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Justeach</title>
+    </head>
+    <body>
+        <div class="navcon">
+            <span id="head1">JT</span>
+            <button class="navbtn" onclick="window.location.href='/dashboard/January/1'">Dashboard</button>
+            <div>
+                <input type="image" class="accbtn" src="/static/pfp.png" onclick="window.location.href='/account'">
+            </div>
+            {% if type == "Teacher" %}
+                <div id="inpcon">
+                        <form method="POST">
+                            <input type="image" name="submit" src="/static/search.png" alt="Submit" id="srch" />
+                            <input id="inp1" type="text" name="srch" required autocomplete="off" placeholder="Search for user...">
+                        </form>
+                </div>
+            {% endif %}
+        </div>
+        <div class="head3">Search results for <span style="color: #EFA953;">{{ searchdat }}</span>...</div>
+        {% for user in users %}
+            <form method="POST">
+                <input type="submit" value="{{ user.username }}" class="res" name="{{ user.username }}" id="{{ user.username }}">
+            </form>
+        {% endfor %}
+    </body>
+</html>

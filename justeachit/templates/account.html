@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+        <link href="/static/style-6.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Justeach</title>
+    </head>
+    <body>
+        <div class="navcon">
+            <span id="head1">JT</span>
+            <button class="navbtn" onclick="window.location.href='/dashboard/January/1'">Dashboard</button>
+            <div>
+                <input type="image" class="accbtn" src="/static/pfp.png" onclick="window.location.href='/account'">
+            </div>
+            {% if type == "Teacher" %}
+                <div id="inpcon">
+                        <form method="POST">
+                            <input type="image" name="submit" src="/static/search.png" alt="Submit" id="srch" />
+                            <input id="inp1" type="text" name="srch" required autocomplete="off" placeholder="Search for user...">
+                        </form>
+                </div>
+            {% endif %}
+        </div>
+        {% if get_flashed_messages() %}
+                <header>
+                    <div class="alert alert-primary border text-center" role="alert">
+                        {{ get_flashed_messages() | join(" ") }}
+                    </div>
+                </header>
+        {% endif %}
+        <div class="head4">Log Out</div>
+        <form method="POST">
+            <span class="desc1">Here is where you</span><span><input type="submit" value="log out" name="logout" id="logout"></span>
+        </form>
+        <div class="head3">Account</div>
+        <form required autocomplete="off" method="POST">
+            <div>
+                <div class="subhead">What is your username?</div>
+                <input type="text" name="username" value="{{data.username}}" placeholder="Username" class="inp">
+            </div>
+            <div>
+                <div class="subhead">What is your age?</div>
+                <input type="number" name="age" value="{{data.age}}" placeholder="Age" class="inp" min=0 max=100>
+            </div>
+            <div>
+                <div class="subhead">What is your email?</div>
+                <input type="email" name="email" value="{{data.email}}" placeholder="Email" class="inp">
+            </div>
+            <div>
+                <div class="subhead">What is your password?</div>
+                <input type="password" name="npassword" placeholder="Password" class="inp">
+            </div>
+            <div>
+                <input type="submit" class="subbtn" value="CHANGE">
+            </div>
+        </form>
+    </body>
+</html>

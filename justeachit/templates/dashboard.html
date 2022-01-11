@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+        <link href="/static/style-5.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Justeach</title>
+    </head>
+    <body>
+        <div class="navcon">
+            <span id="head1">JT</span>
+            <button class="navbtn" onclick="window.location.href='/dashboard/January/1'">Dashboard</button>
+            <div>
+                <input type="image" class="accbtn" src="/static/pfp.png" onclick="window.location.href='/account'">
+            </div>
+            {% if type == "Teacher" %}
+                <div id="inpcon">
+                        <form method="POST">
+                            <input type="image" name="submit" src="/static/search.png" alt="Submit" id="srch" />
+                            <input id="inp1" type="text" name="srch" required autocomplete="off" placeholder="Search for user...">
+                        </form>
+                </div>
+            {% endif %}
+        </div>
+        {% for month in year %}
+            <div id="{{ month.name }}" style="height: 72px; width: 100%;"></div>
+            <div style="float: left;">
+                <div class="dashcon">
+                    <div class="dashcon2">
+                        <div class="mname">{{ month.name }}</div>
+                        <input type="image" class="nbnbtn1" src="/static/next.png" onclick="window.location.href='/dashboard/{{ nextmonth }}/1'">
+                        <input type="image" class="bbnbtn1" src="/static/back.png" onclick="window.location.href='/dashboard/{{ prevmonth }}/1'">
+                        <div class="months">
+                        <table>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                            <th>Sun</th>
+                            {% for week in month.weeks %}
+                                <tr>
+                                    {% for day in week %}
+                                        {% if day == "none" %}
+                                            <td class="none"></td>
+                                        {% else %}
+                                            <td><button class="button1" onclick="window.location.href='/dashboard/{{ month.name }}/{{ day }}'">{{ day }}</button></td>
+                                        {% endif %}   
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashcon3">
+                    <div class="mname">Tasks:</div>
+                    {% for task in tasks %}
+                        {% if types == Teacher %}
+                        <div>
+                            <button class="taskbtn" onclick="window.location.href='/@{{ task.student }}/{{ task.month }}/{{ task.day }}'">{{ task.text }}</button>
+                        </div>
+                        {% else %}
+                        <div>
+                            <button class="taskbtn" onclick="window.location.href='/dashboard/{{ task.month }}/{{ task.day }}'">{{ task.text }}</button>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="ricon">
+            <div id="header">{{ month }} {{ day }}</div>
+            <input type="image" src="/static/back.png" class="bbnbtn" onclick="window.location.href='/dashboard/{{ yestmonth }}/{{ yestday }}'">
+            <input type="image" src="/static/next.png" class="nbnbtn" onclick="window.location.href='/dashboard/{{ tommonth }}/{{ tomday }}'">
+            <div class="formcon">
+            {% for time in timelist %}
+                {% if time.status == "y" %}
+                <form method="POST">
+                    <input type="submit" value="{{ time.name }}" class="selected" name="{{ time.name }}" id="{{ time.name }}">
+                </form> 
+                {% elif time.status == "n" %}
+                <form method="POST">
+                    <input type="submit" value="{{ time.name }}" class="nselected" name="{{ time.name }}" id="{{ time.name }}">
+                </form> 
+                {% else %}
+                <form method="POST">
+                    <input type="submit" value="{{ time.name }}" class="sselected" name="{{ time.name }}" id="{{ time.name }}" disabled>
+                </form> 
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

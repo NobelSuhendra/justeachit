@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Justeach</title>
+  </head>
+  <body style="background-color: #f5f5f5;">
+    {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+    {% endif %}
+    <div class="div3">
+      <div class="div1">
+        <div class="jthead2">JT</div>
+        <div class="txt1">Welcome Back!</div>
+        <div class= "txt2">
+          If you have an account already, please login using your account details
+        </div>
+        <div>
+          <button class="btn2" type="button" onclick="window.location.href='/login'">SIGN IN</button>
+        </div>
+      </div>
+      <div class="div2">
+        <div class="txt3">Create Account</div>
+        <form method="POST">
+          <div class="divtxt2">
+            <img src="/static/email.png" class="img1">
+            <input class="txtinput" placeholder="Email" type="email" name="email" required autocomplete="off">
+          </div>
+          <div class="divtxt">
+            <img src="/static/pw.png" class="img2">
+            <input class="txtinput" placeholder="Password" type="password" name="password" required autocomplete="off">
+          </div>
+          <div>
+            <input type="submit" class="btn3" value="SIGN UP">
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
