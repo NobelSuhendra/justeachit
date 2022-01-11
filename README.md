@@ -24,3 +24,6 @@ Justeach.it is a website to help teachers and students arrange tutoring sessions
 
 ### Others
 > The calendar is currently limited to 2022, but will can be easily updated by an admin accordingly
+
+
+##### Built by Nobel Suhendra from December 2021 - Janaury 2022
