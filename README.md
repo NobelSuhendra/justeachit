@@ -6,12 +6,12 @@ Justeach.it is a website to help teachers and students arrange tutoring sessions
 ## SQLite
 
 ### Users Table
-```
+```sql
 CREATE TABLE users (username TEXT, email TEXT, logged TEXT, password TEXT, type TEXT, age TEXT, id INTEGER, PRIMARY KEY(id));
 ```
 
 ### Times Table
-```
+```sql
 CREATE TABLE times (time TEXT, month TEXT, date TEXT, id INTEGER, status TEXT, teacher TEXT, student TEXT, id2 INTEGER, PRIMARY KEY(id2));
 ```
 
