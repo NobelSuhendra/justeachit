@@ -3,6 +3,19 @@ Justeach.it is a website to help teachers and students arrange tutoring sessions
 
 > This was built using HTML, CSS, JS, Flask (including jinja2) and SQLite.
 
+## SQLite
+
+### Users Table
+```
+CREATE TABLE users (username TEXT, email TEXT, logged TEXT, password TEXT, type TEXT, age TEXT, id INTEGER, PRIMARY KEY(id));
+```
+
+### Times Table
+```
+CREATE TABLE times (time TEXT, month TEXT, date TEXT, id INTEGER, status TEXT, teacher TEXT, student TEXT, id2 INTEGER, PRIMARY KEY(id2));
+```
+
+
 ## Key Features
 
 ### Account management
